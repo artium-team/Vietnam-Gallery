@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảo tàng tranh Tô Ngọc Vân</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <script src="https://flbulgarelli.github.io/headbreaker/js/headbreaker.js"></script>
+
+    <!-- <div class="container"> -->
+        <!-- <ul class="image-grid">
+            <li><img class="img" src="./static/vomong.jpg" alt="Artwork 1"></li>
+            <li><img class="img" src="./static/haithieunuvaembe.jpg" alt="Artwork 2"></li>
+            <li><img class="img" src="./static/thieunubenhoahue.jpg" alt="Artwork 3"></li>
+            <li><img class="img" src="./static/thieunubenhoasen.jpg" alt="Artwork 4"></li>
+            <li><img class="img" src="./static/thotheu.jpg" alt="Artwork 1"></li>
+            <li><img class="img" src="./static/thuyentrensonghuong.jpg" alt="Artwork 2"></li>
+            <li><img class="img" src="./static/hanoivungdunglen.jpg" alt="Artwork 3"></li>
+            <li><img class="img" src="./static/tranhbuoitrua.png" alt="Artwork 4"></li>
+        </ul> -->
+    <!-- </div> -->
+    <div class="header">
+        <p>Bảo tàng tranh Tô Ngọc Vân</p>
+    </div>
+
+    <div class="test-container">
+        <ul class="test-grid">
+            <img class="img" src="./static/vomong.jpg" alt="Artwork 1">
+            <img class="img" src="./static/haithieunuvaembe.jpg" alt="Artwork 2">
+        </ul>
+        <ul class="test-grid">
+            <img class="img" src="./static/thieunubenhoahue.jpg" alt="Artwork 3">
+            <img class="img" src="./static/thieunubenhoasen.jpg" alt="Artwork 4">
+        </ul>
+        <ul class="test-grid">
+            <img class="img" src="./static/thotheu.jpg" alt="Artwork 1">
+            <img class="img" src="./static/thuyentrensonghuong.jpg" alt="Artwork 2">
+        </ul>
+        <ul class="test-grid">
+            <img class="img" src="./static/hanoivungdunglen.jpg" alt="Artwork 3">
+            <img class="img" src="./static/tranhbuoitrua.png" alt="Artwork 4">
+        </ul>
+        <ul class="test-grid">
+            <img class="img" src="./static/hochutichlamviectailangbacbophu.jpg" alt="Artwork 3">
+            <img class="img" src="./static/langque.jpg" alt="Artwork 4">
+        </ul>
+    </div>
+    <div id="blank" class="disabled">
+        <div id="canvas"></div>
+        <button id="close"><span class="material-symbols-outlined"> close </span></button>
+    </div>
+    <script>
+        let src;
+        let images = document.getElementsByClassName("img");
+        for (let i = 0; i < images.length; i++) {
+            images[i].addEventListener("click", () => {
+                document.getElementById("blank").classList.remove("disabled");
+                document.getElementById("blank").classList.add("enabled");
+
+                document.body.classList.add("cant-scroll");
+                document.body.classList.remove("can-scroll");
+
+                if (src != images[i].src) {
+                    src = images[i].src;
+                    display(src);
+                }
+            });
+        }
+
+        let close = document.getElementById("close");
+        close.addEventListener("click", () => {
+            document.getElementById("blank").classList.remove("enabled");
+            document.getElementById("blank").classList.add("disabled");
+
+            document.body.classList.add("can-scroll");
+            document.body.classList.remove("cant-scroll");
+        });
+    </script>
+</body>
+
+</html>
